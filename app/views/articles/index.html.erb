@@ -1,0 +1,16 @@
+<div class="card-header text-muted">
+  <h1>Wikinimous</h1>
+</div>
+
+<div class='container align-center'>
+<ul>
+  <% @articles.each do |article| %>
+    <li class="lead list-unstyled"> <%= link_to article.title, article_path(article) %></li>
+    <li class="list-unstyled"> <%= article.content %></li>
+  <% end %>
+</ul>
+</div>
+
+<div class='container' >
+  <%= link_to "Add a new article", new_article_path %>
+</div>

@@ -1,0 +1,18 @@
+<div class="row justify-content-center">
+  <div class="card border-0" style="width: 55rem;">
+    <div class="card-body">
+    <h2 class="card-title border-bottom"><%= @article.title %></h2>
+
+    <p class="card-text"><%= @article.content %></p>
+    </div>
+
+    <div class="card-body">
+      <%= link_to "Back to list", articles_path %> |
+      <%= link_to "Edit", edit_article_path(@article) %> |
+
+      <%= link_to "delete", article_path(@article),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </div>
+  </div>
+</div>
